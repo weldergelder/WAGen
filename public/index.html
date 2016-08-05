@@ -1,0 +1,128 @@
+<!--index.html-->
+<!DOCTYPE html>
+<html>
+	<head>
+	    <title>WA Generator</title>	
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" href="css/bootstrap-theme.min.css" />		
+	</head>
+
+	<body>
+
+		<div class="page-header">
+			<h1>WA Generator <small>Keep your WAs nice and clean</small></h1>
+		</div>
+		<div class="container">
+
+			<div class="panel panel-default col-md-9">
+				<div class="panel-heading">Tasks</div>
+				<div class="panel-body">
+					<p>Select tasks that will fall into the scope of work</p>
+					<form>
+						<input type="checkbox" name="ED" value="ED"> Extended Diagnostics<br>
+						<input type="checkbox" name="VR" value="VR"> Virus Removal<br>
+						<input type="checkbox" name="TU" value="TU"> Tune Up<br>
+						<input type="checkbox" name="ASR" value="ASR"> Software Repair
+						<input type="text" name="RepairDetails" placeholder="Repair Details" /><br>
+						<input type="checkbox" name="OS" value="OS"> OS Install
+						<input type="text" name="DOS" placeholder="Requested OS" /><br>
+						<input type="checkbox" name="OSU" value="OSU"> OS Upgrade
+						<input type="text" name="OSFROM" placeholder="From OS" />
+						<input type="text" name="OSTO" placeholder="To OS" /><br>
+						<input type="checkbox" name="HW" value="HW"> Hardware Install
+						<input type="text" name="HWP" placeholder="Parts" /><br>
+						<input type="checkbox" name="ISDR" value="ISDR"> In Store Data Recovery<br>
+						<input type="checkbox" name="SW" value="SW"> Software Install
+						<input type="text" name="REQSW" placeholder="Requested Software" /><br>
+						<input type="checkbox" name="DEPOT" value="DEPOT"> Depot Service 
+						<select type="form-control">
+							<option>OEM</option>
+							<option>OOW</option>
+							<option>Complete</option>
+						</select>
+					</form>
+				</div>
+			</div>
+
+			<div class="panel panel-default col-md-3">
+				<div class="panel-heading">Output</div>
+				<div class="panel-body">
+					<button class="btn btn-primary">Generate Output</button><br>
+					<p>Scope of Work</p>
+					<textarea rows="4" ></textarea><br><br>
+					<p>Recommendations</p>
+					<textarea rows="4" ></textarea>
+				</div>
+			</div>
+
+			<div class="panel panel-default col-md-9">
+				<div class="panel-heading">Backup</div>
+				<div class="panel-body">
+					<p>Select customer's backup preferences</p>
+					<form>
+						<input type="radio" name="BACKUP" value="DECL"> Decline Backup<br>
+						<input type="radio" name="BACKUP" value="APPR" checked> Request Backup
+						<select type="form-control">
+							<option>Transfer</option>
+							<option>Precationary</option>
+						</select>
+						<input type="text" name="BFROM" placeholder="From" />
+						<input type="text" name="BTO" placeholder="To" />
+					</form>
+				</div>
+			</div>
+
+			<div class="panel panel-default col-md-9">
+				<div class="panel-heading">Antivirus</div>
+				<div class="panel-body">
+					<p>Select customer's antivirus program preference</p>
+					<form>
+						<input type="radio" name="AV" value="DEF" checked> Windows Defender<br>
+						<input type="radio" name="AV" value="THRD"> Third Party
+						<input type="text" name="AVSW" placeholder="Enter 3rd Party AV" /><br>
+					</form>
+				</div>
+			</div>
+
+			<div class="panel panel-default col-md-9">
+				<div class="panel-heading">ETA</div>
+				<div class="panel-body">
+					<p>Enter service ETA</p>
+					<form>
+						<input type="text" name="ETAFrom" placeholder="From (Days)" />
+						<input type="text" name="ETATo" placeholder="To (Days)" /><br>
+					</form>
+				</div>
+			</div>
+
+
+			<div class="panel panel-default col-md-9">
+				<div class="panel-heading">Service Cost</div>
+				<div class="panel-body">
+					<p>Enter service cost details</p>
+					<form>
+						<input type="radio" name="COST"> Free Service<br>
+						<input type="radio" name="COST"> Assure<br>
+						<input type="radio" name="COST"> One-Time Service<br>
+						<input type="checkbox" name="BCOST" value="BCOST"> Backup ($49)<br>
+						<input type="checkbox" name="HWCOST" value="HWCOST"> Hardware Install ($49)<br>
+						<input type="checkbox" name="OSCOST" value="OSCOST"> OS Install/Upgrade ($49)<br>
+						<input type="checkbox" name="DRCOST" value="DRCOST"> In Store Data Recovery ($149)<br>
+						<input type="checkbox" name="OOWEstimate" value="OOWEstimate"> Pending OOW Estimate<br>
+						<input type="text" name="OTHERCOST" placeholder="Other"><br>
+					</form>
+				</div>
+			</div>
+
+
+
+		</div>
+		<!--ALL INCLUDES AND JAVA SCRIPT FILES GO HERE-->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+
+    
+	</body>
+	
+	
+</html>
