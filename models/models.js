@@ -1,7 +1,6 @@
 var mongoose = require('mongoose');
 
 var taskSchema = new mongoose.Schema({
-    taskID: String,
     title: String,
     text: String,
     count: Number,
@@ -11,7 +10,6 @@ var taskSchema = new mongoose.Schema({
 });
 
 var backupSchema = new mongoose.Schema({
-    backupID: String,
     title: String,
     text: String,
     count: Number,
@@ -22,29 +20,26 @@ var backupSchema = new mongoose.Schema({
 });
 
 var avSchema = new mongoose.Schema({
-    avID: String,
     title: String,
     text: String,
     count: Number
 });
 
 var paymentSchema = new mongoose.Schema({
-    paymentID: String,
     title: String,
     text: String,
     count: Number
 });
 
 var itemSchema = new mongoose.Schema({
-    itemID: String,
     title: String,
     text: String,
     count: Number,
     cost: String
 });
 
-mongoose.model("Tasks", taskSchema);
-mongoose.model("Backup", backupSchema);
-mongoose.model("Antivirus", avSchema);
-mongoose.model("Payment", paymentSchema);
-mongoose.model("Items", itemSchema);
+mongoose.model("tasks", taskSchema);
+mongoose.model("backup", backupSchema);
+mongoose.model("antivirus", avSchema);
+mongoose.model("payment", paymentSchema);
+mongoose.model("items", itemSchema);
