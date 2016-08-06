@@ -42,3 +42,9 @@ var itemSchema = new mongoose.Schema({
     count: Number,
     cost: String
 });
+
+mongoose.model("Tasks", taskSchema);
+mongoose.model("Backup", backupSchema);
+mongoose.model("Antivirus", avSchema);
+mongoose.model("Payment", paymentSchema);
+mongoose.model("Items", itemSchema);

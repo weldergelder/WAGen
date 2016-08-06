@@ -8,7 +8,7 @@ var mongoose = require('mongoose');
 
 //connect to database
 mongoose.connect("mongodb://localhost:27017/wagen");
-
+require('./models/models.js');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
