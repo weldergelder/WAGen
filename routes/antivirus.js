@@ -44,9 +44,46 @@ router.route('/')
 
         });
     })
+
+
+    .delete(function(req, res){
+        Antivirus.findOne({'title': req.body.title}, function(err, av){
+            if(err){
+                return res.send({message:'Error has occurred'});
+            }
+            if(av){
+                Antivirus.remove({title: req.body.title},
+                function(err) {
+                    if(err) return res.send({message: 'Error has occurred'});
+                });
+
+                return res.send({message: 'AV deleted successfully'});
+            }
+            else{
+                return res.send({message: 'AV not found'});
+            }
+
+        });
+    })
     
     .put(function(req, res){
-        res.send({message: 'update av option'});  
+        Antivirus.findOne({'title': req.body.title}, function(err, av){
+            if(err)
+                return res.send({message: 'Error has occurred'});
+            if(av){
+                av.text = req.body.text;
+                av.count = req.body.count;
+                av.save(function(err, av){
+                    if(err)
+                        res.send({message: 'Error has occurred'});
+                    return res.send({message: 'AV Record updated successfully'});
+                });
+            }
+            else{
+                return res.send({message: 'AV not found'});
+            }
+
+        });
     });
 
 module.exports = router;
