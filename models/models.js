@@ -4,19 +4,14 @@ var taskSchema = new mongoose.Schema({
     title: String,
     text: String,
     count: Number,
-    textbox: Number,
-    list: Number,
-    listItems: [{item: String}]
+    textbox: Number
 });
 
 var backupSchema = new mongoose.Schema({
     title: String,
     text: String,
     count: Number,
-    textbox: Number,
-    list: Number,
-    listItems: [{from: String,
-        to: String}]
+    textbox: Number
 });
 
 var avSchema = new mongoose.Schema({

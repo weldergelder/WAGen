@@ -71,6 +71,7 @@ router.route('/')
             if(err)
                 return res.send({message: 'Error has occurred'});
             if(av){
+                av.title = req.body.title;
                 av.text = req.body.text;
                 av.count = req.body.count;
                 av.save(function(err, av){
