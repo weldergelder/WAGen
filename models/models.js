@@ -17,7 +17,8 @@ var backupSchema = new mongoose.Schema({
 var avSchema = new mongoose.Schema({
     title: String,
     text: String,
-    count: Number
+    count: Number,
+    texbox: Number
 });
 
 var paymentSchema = new mongoose.Schema({

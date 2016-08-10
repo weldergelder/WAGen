@@ -32,7 +32,7 @@ router.route('/')
                     newAV.title = req.body.title;
                     newAV.count = 0;
                     newAV.text = req.body.text;
-
+                    newAV.textbox = req.body.textbox;
                     newAV.save(function(err, newAV){
                         if(err)
                             return res.send({message: 'Error adding new AV'});
@@ -71,9 +71,10 @@ router.route('/')
             if(err)
                 return res.send({message: 'Error has occurred'});
             if(av){
-                av.title = req.body.title;
+                av.title = req.body.newTitle;
                 av.text = req.body.text;
                 av.count = req.body.count;
+                av.textbox = req.body.textbox;
                 av.save(function(err, av){
                     if(err)
                         res.send({message: 'Error has occurred'});

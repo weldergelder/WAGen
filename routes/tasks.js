@@ -70,7 +70,7 @@ router.route('/')
             if(err)
                 return res.send({message: 'Error has occurred'});
             if(tsk){
-                tsk.title = req.body.title;
+                tsk.title = req.body.newTitle;
                 tsk.text = req.body.text;
                 tsk.count = req.body.count;
                 tsk.textbox = req.body.textbox;
