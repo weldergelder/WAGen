@@ -7,20 +7,23 @@
 		<link rel="stylesheet" href="stylesheets/bootstrap-theme.min.css" />		
 	</head>
 
-	<body>
-		<div class="container">
-
+	<body ng-app="WAGen">
+		<div class="container" ng-controller="mainController">
+			<form>
 			<div class="page-header">
 				<h1>WA Generator <small>Keep your WAs nice and clean</small></h1>
 			</div>
 		
-
 			<div class="panel panel-default col-md-9">
 				<div class="panel-heading">Tasks</div>
 				<div class="panel-body">
 					<p>Select tasks that will fall into the scope of work</p>
-					<form>
-						<input type="checkbox" name="ED" value="ED"> Extended Diagnostics<br>
+						<div ng-repeat="task in taskList | orderBy: 'task.count': false">
+							<input type="checkbox" value="task.title">  {{task.title}}  
+							<input type="text" ng-show="task.textbox">
+							<br>
+						</div>
+						<!--<input type="checkbox" name="ED" value="ED"> Extended Diagnostics<br>
 						<input type="checkbox" name="VR" value="VR"> Virus Removal<br>
 						<input type="checkbox" name="TU" value="TU"> Tune Up<br>
 						<input type="checkbox" name="ASR" value="ASR"> Software Repair
@@ -40,8 +43,8 @@
 							<option>OEM</option>
 							<option>OOW</option>
 							<option>Complete</option>
-						</select>
-					</form>
+						</select>  -->
+
 				</div>
 			</div>
 
@@ -60,16 +63,18 @@
 				<div class="panel-heading">Backup</div>
 				<div class="panel-body">
 					<p>Select customer's backup preferences</p>
-					<form>
-						<input type="radio" name="BACKUP" value="DECL"> Decline Backup<br>
+						<div ng-repeat="backup in backupList | orderBy: 'backup.count': false">
+							<input type="radio" value="backup.title" name="BACKUP">  {{backup.title}}<br>
+						</div>
+						<!--<input type="radio" name="BACKUP" value="DECL"> Decline Backup<br>
 						<input type="radio" name="BACKUP" value="APPR" checked> Request Backup
 						<select type="form-control">
 							<option>Transfer</option>
 							<option>Precationary</option>
 						</select>
 						<input type="text" name="BFROM" placeholder="From" />
-						<input type="text" name="BTO" placeholder="To" />
-					</form>
+						<input type="text" name="BTO" placeholder="To" />  -->
+
 				</div>
 			</div>
 
@@ -77,11 +82,13 @@
 				<div class="panel-heading">Antivirus</div>
 				<div class="panel-body">
 					<p>Select customer's antivirus program preference</p>
-					<form>
-						<input type="radio" name="AV" value="DEF" checked> Windows Defender<br>
+						<div ng-repeat="av in avList | orderBy: 'av.count': false">
+							<input type="radio" value="av.title" name="AV">  {{av.title}}<br>
+						</div>
+					<!--	<input type="radio" name="AV" value="DEF" checked> Windows Defender<br>
 						<input type="radio" name="AV" value="THRD"> Third Party
-						<input type="text" name="AVSW" placeholder="Enter 3rd Party AV" /><br>
-					</form>
+						<input type="text" name="AVSW" placeholder="Enter 3rd Party AV" /><br> -->
+
 				</div>
 			</div>
 
@@ -89,10 +96,10 @@
 				<div class="panel-heading">ETA</div>
 				<div class="panel-body">
 					<p>Enter service ETA</p>
-					<form>
+
 						<input type="text" name="ETAFrom" placeholder="From (Days)" />
 						<input type="text" name="ETATo" placeholder="To (Days)" /><br>
-					</form>
+
 				</div>
 			</div>
 
@@ -101,7 +108,16 @@
 				<div class="panel-heading">Service Cost</div>
 				<div class="panel-body">
 					<p>Enter service cost details</p>
-					<form>
+
+						<div ng-repeat="payment in paymentList | orderBy: 'payment.count': false">
+							<input type="radio" value="payment.title" name="PAY">  {{payment.title}}<br>
+						</div>
+						<br>
+						<br>
+						<div ng-repeat="item in itemList | orderBy: 'item.count': false">
+							<input type="checkbox" value="item.title">  {{item.title}}<br>
+						</div>
+						<!--
 						<input type="radio" name="COST"> Free Service<br>
 						<input type="radio" name="COST"> Assure<br>
 						<input type="radio" name="COST"> One-Time Service<br>
@@ -111,18 +127,19 @@
 						<input type="checkbox" name="DRCOST" value="DRCOST"> In Store Data Recovery ($149)<br>
 						<input type="checkbox" name="OOWEstimate" value="OOWEstimate"> Pending OOW Estimate<br>
 						<input type="text" name="OTHERCOST" placeholder="Other"><br>
-					</form>
+						-->
 				</div>
 			</div>
-
+			</form>
 
 
 		</div>
 		<!--ALL INCLUDES AND JAVA SCRIPT FILES GO HERE-->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 		<script src="javascripts/bootstrap.min.js"></script>
-
-    
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+		<script src="javascripts/angular-resource.js"></script>
+		<script src="javascripts/wagen.js"></script>
 	</body>
 	
 	
